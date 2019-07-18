@@ -30,6 +30,37 @@ python3 ./Client/client.py
 
 Visit http://127.0.0.1:5000
 
+# Docker
+For those of us who would like to run this in Docker, rather than muddy our development system with multiple versions of each language, framework, etc.
+
+This Docker image is based on the official python docker image. Currently, everything is being installed into a single image. Eventually it would be best to run a separate DB image to more align with a general production environments.
+
+Passenger is being used as the Application server.
+
+Apache is being used as the HTTP server. Though I plan to switch over to nginx. 
+
+## Requirements
+- Passenger
+- MySQL
+
+## How to build the image
+To build the image from the included Dockerfile:
+
+- Open the root directory of the project in a terminal (should contain the Dockerfile)
+- docker build --tag=videohub .
+
+## How to run a container
+To start a container for the videohub image
+
+- docker run --name videohub -p 5000:5000 videohub:latest
+
+You will then be able to run the videohub container going forward.
+
+## Access the service
+To access the service from the running container use this URL:
+
+- http://localhost:3000
+
 # Screenshots
 
 ## Normal user
