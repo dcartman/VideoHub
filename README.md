@@ -59,7 +59,7 @@ You will then be able to run the videohub container going forward.
 ## Access the service
 To access the service from the running container use this URL:
 
-- http://localhost:3000
+- http://localhost:5000
 
 # Screenshots
 
