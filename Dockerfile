@@ -15,7 +15,8 @@ RUN rm -f /etc/service/nginx/down
 RUN rm /etc/nginx/sites-enabled/default
 ADD testapp.conf /etc/nginx/sites-enabled/testapp.conf
 
-RUN apt-get install -y -qq python3-pip
+RUN apt-get install -y -qq python3-pip postgresql postgresql-contrib mysql-server
+RUN mysql_secure_installation
 
 # Setup my app
 COPY --chown=app:app . "${WDIR}"
